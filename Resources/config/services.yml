@@ -1,0 +1,4 @@
+services:
+#    x_team_slack_messanger.example:
+#        class: XTeam\SlackMessengerBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
