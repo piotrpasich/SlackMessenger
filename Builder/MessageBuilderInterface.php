@@ -2,7 +2,7 @@
 
 namespace XTeam\SlackMessengerBundle\Builder;
 
-interface MessageBuilder
+interface MessageBuilderInterface
 {
     /**
      * Returns Message

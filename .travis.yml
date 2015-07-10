@@ -48,4 +48,5 @@ script:
   - phpunit --coverage-text
 
 notifications:
-  email: friendsofsymfony-dev@googlegroups.com
+  email: piotr.pasich@gmail.com
+

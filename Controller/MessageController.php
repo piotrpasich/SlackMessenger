@@ -6,9 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use XTeam\SlackMessengerBundle\Builder\MessageBuilder;
+use XTeam\SlackMessengerBundle\Builder\MessageBuilderInterface;
 use XTeam\SlackMessengerBundle\Event\MessageEvent;
-use XTeam\SlackMessengerBundle\Model\Message;
 
 class MessageController extends Controller
 {
@@ -22,7 +21,7 @@ class MessageController extends Controller
      */
     protected $messageBuilder;
 
-    public function __construct(TraceableEventDispatcher $eventDispatcher, MessageBuilder $messageBuilder)
+    public function __construct(TraceableEventDispatcher $eventDispatcher, MessageBuilderInterface $messageBuilder)
     {
         $this->eventDispatcher = $eventDispatcher;
         $this->messageBuilder = $messageBuilder;

@@ -2,13 +2,13 @@
 
 namespace XTeam\SlackMessengerBundle\Builder;
 
-use XTeam\SlackMessengerBundle\Builder\MessageBuilder;
+use XTeam\SlackMessengerBundle\Builder\MessageBuilderInterface;
 use XTeam\SlackMessengerBundle\Model\Channel;
 use XTeam\SlackMessengerBundle\Model\Message;
 use XTeam\SlackMessengerBundle\Model\Team;
 use XTeam\SlackMessengerBundle\Model\User;
 
-class SlackAPIMessageBuilder implements MessageBuilder
+class SlackAPIMessageBuilder implements MessageBuilderInterface
 {
 
     public function getMessage(array $rawPayloadData)
