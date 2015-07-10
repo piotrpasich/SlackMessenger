@@ -3,6 +3,7 @@
     "description": "An integration bundle with slack",
     "type": "symfony-bundle",
     "require": {
+        "phpunit/phpunit": "^4.7",
         "phpspec/phpspec": "^2.2",
         "cleentfaar/slack": "~0.15.3",
         "php": ">=5.5",
