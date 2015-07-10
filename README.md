@@ -41,3 +41,8 @@ services:
         tags:
             - { name: kernel.event_listener, event: slack.message_received, method: doYourJob }
 ```
+
+Notes
+---------
+
+This bundle requires a Symfony in version higher or equal 2.7
