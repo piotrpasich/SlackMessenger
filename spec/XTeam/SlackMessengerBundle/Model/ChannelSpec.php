@@ -9,26 +9,26 @@ class ChannelSpec extends ObjectBehavior
 {
     private $wrongDataSet = [
         [
-            'channelId' => 1,
+            'channelId' => 'C2147483705',
             'channelName' => [],
             'message' => "The Channel Name should be a string",
         ],
         [
             'channelId' => [],
             'channelName' => 'general',
-            'message' => "The Channel Id should be an integer",
+            'message' => "The Channel Id should be a string",
         ],
         [
             'channelId' => [],
             'channelName' => [],
-            'message' => "The Channel Id should be an integer",
+            'message' => "The Channel Id should be a string",
         ],
     ];
 
     function it_is_initializable()
     {
         $this->beConstructedWith(
-            $id = 123,
+            $id = 'C2147483705',
             $name = 'general'
         );
 

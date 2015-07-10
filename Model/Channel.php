@@ -39,8 +39,8 @@ class Channel
      */
     protected function setId($id)
     {
-        if (!is_int($id)) {
-            throw new \InvalidArgumentException("The Channel Id should be an integer");
+        if (!is_string($id)) {
+            throw new \InvalidArgumentException("The Channel Id should be a string");
         }
 
         $this->id = $id;

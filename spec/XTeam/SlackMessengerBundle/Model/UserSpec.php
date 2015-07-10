@@ -9,26 +9,26 @@ class UserSpec extends ObjectBehavior
 {
     private $wrongDataSet = [
         [
-            'userId' => 'Not an integer',
+            'userId' => 1,
             'userName' => [],
-            'message' => "The User Id should be an integer",
+            'message' => "The User Id should be a string",
         ],
         [
-            'userId' => 1,
+            'userId' => 'C2147483705',
             'userName' => [],
             'message' => "The User Name should be a string",
         ],
         [
-            'userId' => 'Not an integer',
+            'userId' => 1,
             'userName' => 'XTeam',
-            'message' => "The User Id should be an integer",
+            'message' => "The User Id should be a string",
         ],
     ];
 
     function it_is_initializable()
     {
         $this->beConstructedWith(
-            $id = 87,
+            $id = 'C2147483705',
             $name = 'papi'
         );
         $this->shouldHaveType('XTeam\SlackMessengerBundle\Model\User');

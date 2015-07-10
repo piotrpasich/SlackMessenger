@@ -9,30 +9,30 @@ class TeamSpec extends ObjectBehavior
 {
     private $wrongDataSet = [
         [
-            'teamId' => 'Not an integer',
-            'teamName' => [],
-            'message' => "The Team id should be an integer",
+            'teamId' => 1,
+            'teamDomain' => [],
+            'message' => "The Team id should be a string",
         ],
         [
-            'teamId' => 1,
-            'teamName' => [],
+            'teamId' => 'C2147483705',
+            'teamDomain' => [],
             'message' => "The Team name should be a string",
         ],
         [
-            'teamId' => 'Not an integer',
-            'teamName' => 'XTeam',
-            'message' => "The Team id should be an integer",
+            'teamId' => 1,
+            'teamDomain' => 'XTeam',
+            'message' => "The Team id should be a string",
         ],
     ];
 
     function it_is_initializable()
     {
         $this->beConstructedWith(
-            $teamId = 87,
+            $teamId = 'C2147483705',
             $teamDomain = 'XTeam'
         );
         $this->shouldHaveType('XTeam\SlackMessengerBundle\Model\Team');
-        $this->getName()->shouldReturn($teamDomain);
+        $this->getDomain()->shouldReturn($teamDomain);
         $this->getId()->shouldReturn($teamId);
     }
 
@@ -42,7 +42,7 @@ class TeamSpec extends ObjectBehavior
             $this->shouldThrow(new \InvalidArgumentException($dataSet['message']))
                  ->during('__construct',[
                      $dataSet['teamId'],
-                     $dataSet['teamName']
+                     $dataSet['teamDomain']
                  ]);
         }
     }
