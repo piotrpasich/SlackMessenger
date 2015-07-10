@@ -3,6 +3,12 @@ SlackMessenger
 
 This bundle allows you to receive and publish messages from Slack mapped to `Message` objects.
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/badges/build.png?b=master)](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/build-status/master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a5e2dc1f-79fd-4077-91ef-168f0141f64e/mini.png)](https://insight.sensiolabs.com/projects/a5e2dc1f-79fd-4077-91ef-168f0141f64e)
+[![Build Status](https://travis-ci.org/piotrpasich/SlackMessenger.svg?branch=master)](https://travis-ci.org/piotrpasich/SlackMessenger)
+
+
 Extending
 ---------
 
