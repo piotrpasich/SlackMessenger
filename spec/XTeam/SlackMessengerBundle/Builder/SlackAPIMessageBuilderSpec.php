@@ -34,15 +34,15 @@ class SlackAPIMessageBuilderSpec extends ObjectBehavior
         $message->getTriggerWord()->shouldReturn($rawSlackApiData['trigger_word']);
 
         $message->getTeam()->shouldHaveType('XTeam\SlackMessengerBundle\Model\Team');
-        $message->getTeam()->getId()->shouldReturn($rawSlackApiData['team_id']);
-        $message->getTeam()->getDomain()->shouldReturn($rawSlackApiData['team_domain']);
+        $message->getTeam()->getId()->__toString()->shouldReturn($rawSlackApiData['team_id']);
+        $message->getTeam()->getDomain()->__toString()->shouldReturn($rawSlackApiData['team_domain']);
 
         $message->getChannel()->shouldHaveType('XTeam\SlackMessengerBundle\Model\Channel');
-        $message->getChannel()->getId()->shouldReturn($rawSlackApiData['channel_id']);
-        $message->getChannel()->getName()->shouldReturn($rawSlackApiData['channel_name']);
+        $message->getChannel()->getId()->__toString()->shouldReturn($rawSlackApiData['channel_id']);
+        $message->getChannel()->getName()->__toString()->shouldReturn($rawSlackApiData['channel_name']);
 
         $message->getUser()->shouldHaveType('XTeam\SlackMessengerBundle\Model\User');
-        $message->getUser()->getId()->shouldReturn($rawSlackApiData['user_id']);
-        $message->getUser()->getName()->shouldReturn($rawSlackApiData['user_name']);
+        $message->getUser()->getId()->__toString()->shouldReturn($rawSlackApiData['user_id']);
+        $message->getUser()->getName()->__toString()->shouldReturn($rawSlackApiData['user_name']);
     }
 }

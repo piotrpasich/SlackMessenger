@@ -2,16 +2,19 @@
 
 namespace XTeam\SlackMessengerBundle\Model;
 
+use XTeam\SlackMessengerBundle\ValueObject\Name;
+use XTeam\SlackMessengerBundle\ValueObject\StringId;
+
 class Channel
 {
 
     /**
-     * @var Integer
+     * @var StringId
      */
     protected $id;
 
     /**
-     * @var String
+     * @var Name
      */
     protected $name;
 
@@ -21,13 +24,16 @@ class Channel
         $this->setName($name);
     }
 
+    /**
+     * @return StringId
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * @return String
+     * @return Name
      */
     public function getName()
     {
@@ -39,11 +45,7 @@ class Channel
      */
     protected function setId($id)
     {
-        if (!is_string($id)) {
-            throw new \InvalidArgumentException("The Channel Id should be a string");
-        }
-
-        $this->id = $id;
+        $this->id = new StringId($id);
     }
 
     /**
@@ -51,10 +53,6 @@ class Channel
      */
     protected function setName($name)
     {
-        if (!is_string($name)) {
-            throw new \InvalidArgumentException("The Channel Name should be a string");
-        }
-
-        $this->name = $name;
+        $this->name = new Name($name);
     }
 }

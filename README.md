@@ -42,7 +42,61 @@ services:
             - { name: kernel.event_listener, event: slack.message_received, method: doYourJob }
 ```
 
+
+## Installation
+
+### Step 1: Composer require
+
+``` bash
+$ php composer.phar require xteam/slackmessengerbundle "dev-master"
+```
+
+### Step 2: Enable the bundle
+
+Enable the bundle in the kernel:
+
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new XTeam\SlackMessengerBundle\XTeamSlackMessengerBundle(),
+    );
+}
+```
+
+### Step 3: Add options to parameters.yml
+
+```
+#app/config/parameters.yml
+parameters:
+  # ...
+  slack.token: Your SLack token
+```
+
+### Step 4: Add routes
+
+```
+#app/congig/routes.yml
+
+x_team_slack_messenger:
+    resource: "@XTeamSlackMessengerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+```
+
 Notes
 ---------
 
 This bundle requires a Symfony in version higher or equal 2.7
+
+Usage example
+-------------
+
+```
+curl -X POST --data 'token=XXXXXXXXXXXXXXXXXX&team_id=T0001&team_domain=example&channel_id=C2147483705&channel_name=test&timestamp=1355517523.000005&user_id=U2147483697&user_name=Steve&text=googlebot: What is the air-speed velocity of an unladen swallow?&trigger_word=googlebot' http://localhost/app_dev.php/v1/message/post
+
+```

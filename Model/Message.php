@@ -66,7 +66,7 @@ class Message
 
     protected function setText($text)
     {
-        if (!is_string($text)) {
+        if (empty($text) || !is_string($text)) {
             throw new \InvalidArgumentException("The text should be a string");
         }
 
@@ -75,7 +75,7 @@ class Message
 
     protected function setTriggerWord($triggerWord)
     {
-        if (!is_string($triggerWord)) {
+        if (empty($triggerWord) || !is_string($triggerWord)) {
             throw new \InvalidArgumentException("The trigger word should be a string");
         }
 

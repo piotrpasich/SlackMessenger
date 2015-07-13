@@ -11,17 +11,17 @@ class ChannelSpec extends ObjectBehavior
         [
             'channelId' => 'C2147483705',
             'channelName' => [],
-            'message' => "The Channel Name should be a string",
+            'message' => "The Name should be a string",
         ],
         [
             'channelId' => [],
             'channelName' => 'general',
-            'message' => "The Channel Id should be a string",
+            'message' => "The Id should be a string",
         ],
         [
             'channelId' => [],
             'channelName' => [],
-            'message' => "The Channel Id should be a string",
+            'message' => "The Id should be a string",
         ],
     ];
 
@@ -32,8 +32,8 @@ class ChannelSpec extends ObjectBehavior
             $name = 'general'
         );
 
-        $this->getId()->shouldReturn($id);
-        $this->getName()->shouldReturn($name);
+        $this->getId()->__toString()->shouldReturn($id);
+        $this->getName()->__toString()->shouldReturn($name);
 
         $this->shouldHaveType('XTeam\SlackMessengerBundle\Model\Channel');
     }

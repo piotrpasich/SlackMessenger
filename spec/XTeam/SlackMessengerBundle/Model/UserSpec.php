@@ -11,17 +11,17 @@ class UserSpec extends ObjectBehavior
         [
             'userId' => 1,
             'userName' => [],
-            'message' => "The User Id should be a string",
+            'message' => "The Id should be a string",
         ],
         [
             'userId' => 'C2147483705',
             'userName' => [],
-            'message' => "The User Name should be a string",
+            'message' => "The Name should be a string",
         ],
         [
             'userId' => 1,
             'userName' => 'XTeam',
-            'message' => "The User Id should be a string",
+            'message' => "The Id should be a string",
         ],
     ];
 
@@ -32,8 +32,8 @@ class UserSpec extends ObjectBehavior
             $name = 'papi'
         );
         $this->shouldHaveType('XTeam\SlackMessengerBundle\Model\User');
-        $this->getId()->shouldReturn($id);
-        $this->getName()->shouldReturn($name);
+        $this->getId()->__toString()->shouldReturn($id);
+        $this->getName()->__toString()->shouldReturn($name);
     }
 
     function it_cannot_initialize_wrong_data()

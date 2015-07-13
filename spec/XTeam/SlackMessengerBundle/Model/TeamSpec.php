@@ -11,17 +11,17 @@ class TeamSpec extends ObjectBehavior
         [
             'teamId' => 1,
             'teamDomain' => [],
-            'message' => "The Team id should be a string",
+            'message' => "The Id should be a string",
         ],
         [
             'teamId' => 'C2147483705',
             'teamDomain' => [],
-            'message' => "The Team name should be a string",
+            'message' => "The Name should be a string",
         ],
         [
             'teamId' => 1,
             'teamDomain' => 'XTeam',
-            'message' => "The Team id should be a string",
+            'message' => "The Id should be a string",
         ],
     ];
 
@@ -32,8 +32,8 @@ class TeamSpec extends ObjectBehavior
             $teamDomain = 'XTeam'
         );
         $this->shouldHaveType('XTeam\SlackMessengerBundle\Model\Team');
-        $this->getDomain()->shouldReturn($teamDomain);
-        $this->getId()->shouldReturn($teamId);
+        $this->getDomain()->__toString()->shouldReturn($teamDomain);
+        $this->getId()->__toString()->shouldReturn($teamId);
     }
 
     function it_cannot_initialize_wrong_data()

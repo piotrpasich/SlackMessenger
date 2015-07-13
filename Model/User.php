@@ -2,16 +2,19 @@
 
 namespace XTeam\SlackMessengerBundle\Model;
 
+use XTeam\SlackMessengerBundle\ValueObject\Name;
+use XTeam\SlackMessengerBundle\ValueObject\StringId;
+
 class User
 {
 
     /**
-     * @var Integer
+     * @var StringId
      */
     protected $id;
 
     /**
-     * @var String
+     * @var Name
      */
     protected $name;
 
@@ -21,43 +24,23 @@ class User
         $this->setName($name);
     }
 
-    /**
-     * @return int
-     */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return String
-     */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param int $id
-     */
     protected function setId($id)
     {
-        if (!is_string($id)) {
-            throw new \InvalidArgumentException("The User Id should be a string");
-        }
-
-        $this->id = $id;
+        $this->id = new StringId($id);
     }
 
-    /**
-     * @param String $name
-     */
     protected function setName($name)
     {
-        if (!is_string($name)) {
-            throw new \InvalidArgumentException("The User Name should be a string");
-        }
-
-        $this->name = $name;
+        $this->name = new Name($name);
     }
 }

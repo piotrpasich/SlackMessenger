@@ -1,5 +1,5 @@
 {
-    "name": "xteam/slackmessenger",
+    "name": "xteam/slackmessengerbundle",
     "description": "An integration bundle with slack",
     "type": "symfony-bundle",
     "require": {

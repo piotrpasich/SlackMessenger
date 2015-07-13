@@ -2,6 +2,9 @@
 
 namespace XTeam\SlackMessengerBundle\Model;
 
+use XTeam\SlackMessengerBundle\ValueObject\Name;
+use XTeam\SlackMessengerBundle\ValueObject\StringId;
+
 class Team
 {
 
@@ -43,23 +46,15 @@ class Team
      */
     protected function setId($id)
     {
-        if (!is_string($id)) {
-            throw new \InvalidArgumentException("The Team id should be a string");
-        }
-
-        $this->id = $id;
+        $this->id = new StringId($id);
     }
 
     /**
      * @param String $name
      */
-    protected function setDomain($name)
+    protected function setDomain($domain)
     {
-        if (!is_string($name)) {
-            throw new \InvalidArgumentException("The Team name should be a string");
-        }
-
-        $this->domain = $name;
+        $this->domain = new Name($domain);
     }
 
 }
