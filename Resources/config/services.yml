@@ -1,9 +1,4 @@
 services:
-#    x_team_slack_messanger.example:
-#        class: XTeam\SlackMessengerBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
-
-
      x_team_slack_messenger.slack.api.client:
          class:  CL\Slack\Transport\ApiClient
          arguments:
@@ -15,6 +10,9 @@ services:
 
      x_team_slack_messenger.builder.api_slack_message_builder:
          class: XTeam\SlackMessengerBundle\Builder\SlackAPIMessageBuilder
+
+     x_team_slack_messenger.builder.slack_api_user_builder:
+         class: XTeam\SlackMessengerBundle\Builder\SlackAPIUserBuilder
 
      x_team_slack_messenger.controller.message:
          class: XTeam\SlackMessengerBundle\Controller\MessageController
