@@ -3,6 +3,7 @@
 namespace XTeam\SlackMessengerBundle\Publisher;
 
 use CL\Slack\Payload\ChatPostMessagePayload;
+use CL\Slack\Payload\FilesUploadPayload;
 use CL\Slack\Transport\ApiClientInterface;
 
 class SlackApiMessagePublisher

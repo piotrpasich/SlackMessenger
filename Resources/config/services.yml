@@ -19,3 +19,8 @@ services:
          arguments:
             - @event_dispatcher
             - @x_team_slack_messenger.builder.api_slack_message_builder
+
+     x_team_slack_messenger.slack.publisher:
+         class: XTeam\SlackMessengerBundle\Publisher\SlackApiMessagePublisher
+         arguments:
+            - @x_team_slack_messenger.slack.api.client
