@@ -10,6 +10,6 @@ interface MessageBuilderInterface
      * @param array $rawPayloadData
      * @return Message
      */
-    public function getMessage(array $rawPayloadData);
+    public function getMessage($rawPayloadData);
 
 }

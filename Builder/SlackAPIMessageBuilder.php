@@ -11,7 +11,7 @@ use XTeam\SlackMessengerBundle\Model\User;
 class SlackAPIMessageBuilder implements MessageBuilderInterface
 {
 
-    public function getMessage(array $rawPayloadData)
+    public function getMessage($rawPayloadData)
     {
         return new Message(
             $this->getUser($rawPayloadData),

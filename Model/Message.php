@@ -30,13 +30,19 @@ class Message
      */
     protected $triggerWord;
 
-    public function __construct(User $user, Team $team, Channel $channel, $text, $triggerWord)
+    /**
+     * @var \DateTime
+     */
+    protected $createdAt;
+
+    public function __construct(User $user, Team $team, Channel $channel, $text, $triggerWord = '', $createdAt = 'now')
     {
         $this->user = $user;
         $this->team = $team;
         $this->channel = $channel;
         $this->setText($text);
         $this->setTriggerWord($triggerWord);
+        $this->setCreatedAt($createdAt);
     }
 
     public function getTeam()
@@ -59,6 +65,14 @@ class Message
         return $this->text;
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
     public function getTriggerWord()
     {
         return $this->triggerWord;
@@ -66,7 +80,7 @@ class Message
 
     protected function setText($text)
     {
-        if (empty($text) || !is_string($text)) {
+        if (empty($text) || ! is_string($text)) {
             throw new \InvalidArgumentException("The text should be a string");
         }
 
@@ -75,10 +89,21 @@ class Message
 
     protected function setTriggerWord($triggerWord)
     {
-        if (empty($triggerWord) || !is_string($triggerWord)) {
+        if ( ! is_string($triggerWord)) {
             throw new \InvalidArgumentException("The trigger word should be a string");
         }
 
         $this->triggerWord = $triggerWord;
     }
+
+    protected function setCreatedAt($createdAt)
+    {
+        if (is_string($createdAt)) {
+            $createdAt = new \DateTime($createdAt);
+        }
+
+        $this->createdAt = $createdAt;
+    }
+
+
 }
