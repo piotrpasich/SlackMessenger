@@ -81,7 +81,8 @@ class Message
     protected function setText($text)
     {
         if (empty($text) || ! is_string($text)) {
-            throw new \InvalidArgumentException("The text should be a string");
+//            throw new \InvalidArgumentException("The text should be a string");
+            $text = '';
         }
 
         $this->text = $text;

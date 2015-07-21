@@ -35,3 +35,10 @@ services:
             - @x_team_slack_messenger.slack.api.client
             - @x_team_slack_messenger.builder.api_object_message_builder
 
+
+     x_team_slack_messenger.slack.users.provider:
+         class: XTeam\SlackMessengerBundle\Provider\SlackApiUsersProvider
+         arguments:
+            - @x_team_slack_messenger.slack.api.client
+            - @x_team_slack_messenger.builder.slack_api_user_builder
+
