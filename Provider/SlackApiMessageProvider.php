@@ -78,6 +78,7 @@ class SlackApiMessageProvider
             }
 
             $messages = $this->apiClient->send($channelPayload)->getMessages();
+
             $allMessages = array_merge($allMessages, array_map(function (SimpleMessage $message) use ($channel) {
                 return $this->messageBuilder->getMessage(new SimpleMessageAdapter($message, $channel));
             }, $messages));
@@ -85,4 +86,5 @@ class SlackApiMessageProvider
 
         return $allMessages;
     }
+
 }
