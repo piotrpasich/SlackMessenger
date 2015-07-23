@@ -4,7 +4,6 @@ namespace XTeam\SlackMessengerBundle\Provider;
 
 use CL\Slack\Model\MessageResultItem;
 use CL\Slack\Model\SimpleMessage;
-use CL\Slack\Payload\ChannelsArchivePayload;
 use CL\Slack\Payload\ChannelsHistoryPayload;
 use CL\Slack\Payload\ChannelsListPayload;
 use CL\Slack\Payload\SearchMessagesPayload;
@@ -54,7 +53,7 @@ class SlackApiMessageProvider
                     }
                 }, $response->getResult()->getMatches()),
                 function ($message) {
-                    return null != $message;
+                    return null !== $message;
                 }
             );
         } else {
@@ -73,7 +72,7 @@ class SlackApiMessageProvider
             $channelPayload->setChannelId($channel->getId());
             $channelPayload->setCount(100000);
 
-            if (null != $sinceTimestamp) {
+            if (null !== $sinceTimestamp) {
                 $channelPayload->setOldest($sinceTimestamp);
             }
 

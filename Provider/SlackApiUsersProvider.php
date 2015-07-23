@@ -2,17 +2,9 @@
 
 namespace XTeam\SlackMessengerBundle\Provider;
 
-use CL\Slack\Model\MessageResultItem;
-use CL\Slack\Model\SimpleMessage;
 use CL\Slack\Model\User;
-use CL\Slack\Payload\ChannelsArchivePayload;
-use CL\Slack\Payload\ChannelsHistoryPayload;
-use CL\Slack\Payload\ChannelsListPayload;
-use CL\Slack\Payload\SearchMessagesPayload;
 use CL\Slack\Payload\UsersListPayload;
 use CL\Slack\Transport\ApiClientInterface;
-use XTeam\SlackMessengerBundle\Adapter\SimpleMessageAdapter;
-use XTeam\SlackMessengerBundle\Builder\MessageBuilderInterface;
 use XTeam\SlackMessengerBundle\Builder\UserBuilderInterface;
 use XTeam\SlackMessengerBundle\Exception\SlackApiException;
 

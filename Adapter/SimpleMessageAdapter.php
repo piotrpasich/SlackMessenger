@@ -57,5 +57,4 @@ class SimpleMessageAdapter extends SimpleMessage
     {
         return $this->channel;
     }
-
 }
