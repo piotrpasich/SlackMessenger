@@ -26,8 +26,5 @@
     "minimum-stability": "dev",
     "autoload": {
       "psr-4": { "XTeam\\SlackMessengerBundle\\": "" }
-    },
-    "repositories": [
-        { "type": "vcs", "url": "git@github.com:piotrpasich/slack.git" }
-    ]
+    }
 }
