@@ -3,12 +3,12 @@
     "description": "An integration bundle with slack",
     "type": "symfony-bundle",
     "require": {
-        "guzzlehttp/guzzle": "4.2.3",
+        "guzzlehttp/guzzle": ">=4.2",
         "phpunit/phpunit": "^4.7",
         "phpspec/phpspec": "^2.2",
-        "cleentfaar/slack": "0.16.1",
+        "cleentfaar/slack": "0.18.1",
         "php": ">=5.5",
-        "symfony/framework-bundle": ">=2.7"
+        "symfony/framework-bundle": ">=3.0"
     },
     "license": "MIT",
     "authors": [
