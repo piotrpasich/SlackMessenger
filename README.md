@@ -1,20 +1,18 @@
 SlackMessenger
-=========================
+==============
 
 This bundle allows you to receive and publish messages from Slack mapped to `Message` objects.
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/?branch=master)
 [![ScrutinizerBuild Status](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/badges/build.png?b=master)](https://scrutinizer-ci.com/g/piotrpasich/SlackMessenger/build-status/master)
-[![Travis Build Status](https://travis-ci.org/piotrpasich/SlackMessenger.svg?branch=master)](https://travis-ci.org/piotrpasich/SlackMessenger)
+[![Travis Build Status](https://travis-ci.org/piotrpasich/SlackMessengerBundle.svg?branch=master)](https://travis-ci.org/piotrpasich/SlackMessengerBundle)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a5e2dc1f-79fd-4077-91ef-168f0141f64e/mini.png)](https://insight.sensiolabs.com/projects/a5e2dc1f-79fd-4077-91ef-168f0141f64e)
 
 
 Extending
 ---------
 
-To receive messages you need to create an EventListener which will be listening to the event `slack.message_received`
-
-Example:
+To receive messages, you need to create an `EventListener` which will be listening to `slack.message_received` event:
 
 ```
 namespace PP\AwesomeBundle\EventListener;
@@ -31,7 +29,7 @@ class AwesomeWorkListener
 }
 ```
 
-And register this in `services.yml`
+And register it in `services.yml`:
 
 ```
 ;PP/AwesomeBundle/Resources/config/service.yml
@@ -43,17 +41,16 @@ services:
 ```
 
 
-## Installation
+Installation
+------------
 
-### Step 1: Composer require
+### Step 1: Require bundle using composer
 
 ``` bash
 $ php composer.phar require xteam/slackmessengerbundle "dev-master"
 ```
 
-### Step 2: Enable the bundle
-
-Enable the bundle in the kernel:
+### Step 2: Enable the bundle in application's kernel
 
 ``` php
 <?php
@@ -68,19 +65,19 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Add options to parameters.yml
+### Step 3: Add bundle config to `parameters.yml` file
 
 ```
-#app/config/parameters.yml
+# app/config/parameters.yml
 parameters:
   # ...
-  slack.token: Your SLack token
+  slack.token: Your Slack token
 ```
 
-### Step 4: Add routes
+### Step 4: Register routes
 
 ```
-#app/congig/routes.yml
+# app/config/routes.yml
 
 x_team_slack_messenger:
     resource: "@XTeamSlackMessengerBundle/Resources/config/routing.yml"
@@ -89,9 +86,9 @@ x_team_slack_messenger:
 ```
 
 Notes
----------
+-----
 
-This bundle requires a Symfony in version higher or equal 2.7
+This bundle requires a Symfony in version 2.7 or higher
 
 Usage example
 -------------
@@ -100,6 +97,5 @@ Usage example
 curl -X POST --data 'token=XXXXXXXXXXXXXXXXXX&team_id=T0001&team_domain=example&channel_id=C2147483705&channel_name=test&timestamp=1355517523.000005&user_id=U2147483697&user_name=Steve&text=googlebot: What is the air-speed velocity of an unladen swallow?&trigger_word=googlebot' http://localhost/app_dev.php/v1/message/post
 
 curl -X POST --data 'token=XXXXXXXXXXXXXXXXXX&team_id=T0001&team_domain=example&channel_id=C2147483705&channel_name=test&timestamp=1355517523.000005&user_id=U2147483697&user_name=Steve&text=googlebot: What is the air-speed velocity of an unladen swallow? /five <@U07E9557H> and <@U07HSHYAU>&trigger_word=googlebot' http://localhost/app_dev.php/v1/message/post
-
 ```
 
